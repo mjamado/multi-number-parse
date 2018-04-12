@@ -3,8 +3,21 @@ import { assert } from 'chai';
 import numberParse from '../src';
 
 const correctNumbers = [
-  '10.5', '10,5', '1.235,76', '2,543.56', '10 654.1234', '2.654$10',
-  '5.435.123,645', '2,566,765.234', '2,432,123$23', '2,45EUR', '4.78€',
+  { actual: '10.5', expected: 10.5 },
+  { actual: '10,5', expected: 10.5 },
+  { actual: '1.235,76', expected: 1235.76 },
+  { actual: '2,543.56', expected: 2543.56 },
+  { actual: '10 654.1234', expected: 10654.1234 },
+  { actual: '2.654$10', expected: 2654.1 },
+  { actual: '5.435.123,645', expected: 5435123.645 },
+  { actual: '2,566,765.234', expected: 2566765.234 },
+  { actual: '2,432,123$23', expected: 2432123.23 },
+  { actual: '2,45EUR', expected: 2.45 },
+  { actual: '4.78€', expected: 4.78 },
+  // some negative numbers
+  { actual: '-2,543.56', expected: -2543.56 },
+  { actual: '-10 654.1234', expected: -10654.1234 },
+  { actual: '-2.654$10', expected: -2654.1 },
 ];
 
 const incorrectNumbers = [
@@ -16,15 +29,17 @@ const incorrectNumbers = [
 
 describe('Test numbers', () => {
   correctNumbers.forEach((item) => {
-    it(`numberParse(${item}) should return a number: ${numberParse(item)}`, (done) => {
-      assert.isNotNaN(numberParse(item));
+    it(`"${item.actual}" should return ${item.expected}`, (done) => {
+      const parsed = numberParse(item.actual);
+      assert.isNotNaN(parsed);
+      assert.equal(parsed, item.expected);
 
       done();
     });
   });
 
   incorrectNumbers.forEach((item) => {
-    it(`numberParse(${item}) should return NaN: ${numberParse(item)}`, (done) => {
+    it(`"${item}" should return NaN`, (done) => {
       assert.isNaN(numberParse(item));
 
       done();
