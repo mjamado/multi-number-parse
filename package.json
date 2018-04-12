@@ -7,8 +7,8 @@
     "clean": "rimraf dist",
     "build": "npm run clean && babel src -d dist --presets env",
     "lint": "eslint src test --fix",
-    "prepublishOnly": "npm run lint && npm run build",
-    "test": "mocha --recursive --exit --require babel-register"
+    "prepublishOnly": "npm run build",
+    "test": "num run lint && mocha --recursive --exit --require babel-register"
   },
   "keywords": [
     "i18n",
