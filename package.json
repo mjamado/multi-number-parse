@@ -8,7 +8,7 @@
     "build": "npm run clean && babel src -d dist --presets env",
     "lint": "eslint src test --fix",
     "prepublishOnly": "npm run build",
-    "test": "num run lint && mocha --recursive --exit --require babel-register"
+    "test": "npm run lint && mocha --recursive --exit --require babel-register"
   },
   "keywords": [
     "i18n",
