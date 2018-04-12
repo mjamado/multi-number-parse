@@ -1,0 +1,44 @@
+{
+  "name": "multi-number-parse",
+  "version": "1.0.0",
+  "description": "Number parser that tries to guess the format",
+  "main": "./dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && babel src -d dist --presets env",
+    "lint": "eslint src test --fix",
+    "prepublish": "npm run lint && npm run build",
+    "test": "mocha --recursive --exit --require babel-register"
+  },
+  "keywords": [
+    "i18n",
+    "number",
+    "parse"
+  ],
+  "author": {
+    "name": "Marco Amado",
+    "email": "mjamado@dreamsincode.com",
+    "url": "http://www.dreamsincode.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjamado/multi-number-parse"
+  },
+  "license": "LGPL-3.0-or-later",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "mocha": "^5.0.5",
+    "rimraf": "^2.6.2"
+  }
+}
