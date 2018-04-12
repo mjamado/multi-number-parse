@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "lts/*"
+
+cache:
+  directories:
+    - "node_modules"
+
+deploy:
+  provider: npm
+  email: mjamado@dreamsincode.com
+  api_key:
+    secure: Y7pLyPt2vvddfsuz4ojfwU7tqclaYhlHGA2011IBkyNiFvTs1Z/jwUP3IgMHZU5MVELHhCmJ00Y8qTEzii9Zbtyh4aKUshyocN//e2eUVNoytKHQAoVb16I3NQKIwS6LH0VeNI2B/ZtUJ0p7vNqigJvboTg6wYySEO27d9J7LUZTengOH+CzKyKa3dAebH+zGUeSihoLTKhlQx5ePa8BRbau2yNPIdQl2xbh7RS7tBcqnfDtI44D5lOKQwt5zEoqssscBH338I+vFgM4MsQfstksQKeHE1vvor/RP0UnpfJIaWMzNY+RwxuJmI8O8+tT2w9RFPSnD9rxO//4OC5Rgll38+/opFao7BIn2NclwyG/R2ySfGa522icl++Sh/T8Tyq3JWtDOTeAyIJq1PjWv4x5jKXVacgoE0whUvo2VyM3SK5dh3TVGBUDkTmuxwuBuZHpOZxiFwLKRLGB4UhmP2q1HrkYh7Ox5550pI/IvKt60MO4Ks8nDaDGNsyxNflJSYmaGkvrxWDtWqkyaIS4iyevcrwXoGj623rc4EEabaVtKxXnTEqxF0Fx00pvKBWhF+8ScVp6bDwDyL8kvIOVzitao9OcoF1ZZk4rzI501k378/u24uBDLgydzKMi6n8DugWngM27qU9zLemSCYU+zZHOT2t3UFaIM0G86OAORMA=
+  on:
+    repo: mjamado/multi-number-parse
+    branch: master
