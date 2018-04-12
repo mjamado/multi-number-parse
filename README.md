@@ -26,12 +26,18 @@ import parse from 'multi-number-parse';
 parse('2,543.56'); // returns 2543.56
 parse('10 654.1234'); // returns 10654.1234
 parse('2.654$10'); // returns 2654.1
+parse('2,45EUR'); // extra suff at the end is stripped, returns 2.45
+parse('-2,543.56'); // negative numbers are OK, returns -2543.56
+parse('10 345,234.21'); // returns NaN, too many different separators
+parse('1.123.234,534,234'); // returns NaN, impossible to detect the decimal separator
+parse('10.4,2'); // returns NaN, malformed digit groups
+parse('1.123.2'); // returns NaN, also malformed digit groups
 ```
 
 ## Contribute
 
-Found a bug? Feel free to open an issue or make a pull request. Always include tests, either for
-the bug or for your changes.
+Found a bug? Feel free to [open an issue](https://github.com/mjamado/multi-number-parse/issues) or
+make a pull request. Always include tests, either for the bug or for your changes.
 
 ## License
 

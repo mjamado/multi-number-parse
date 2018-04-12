@@ -21,10 +21,10 @@ const correctNumbers = [
 ];
 
 const incorrectNumbers = [
-  '10 345,234.21', // too many separators
-  '1.123.234,534,234', // more than a decimal separator
-  '10.4,2', // bad divisions
-  '1.123.2', // bad trailing
+  '10 345,234.21', // too many different separators
+  '1.123.234,534,234', // impossible to detect where's the decimal separator
+  '10.4,2', // malformed digit groups
+  '1.123.2', // also malformed digit groups
 ];
 
 describe('Test numbers', () => {
