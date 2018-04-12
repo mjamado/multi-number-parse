@@ -1,7 +1,7 @@
 {
   "name": "multi-number-parse",
-  "version": "1.0.2",
-  "description": "Number parser that tries to guess the format",
+  "version": "1.0.3",
+  "description": "Library for parsing numbers in any valid format.",
   "main": "./dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
