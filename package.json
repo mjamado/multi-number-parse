@@ -1,6 +1,6 @@
 {
   "name": "multi-number-parse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Number parser that tries to guess the format",
   "main": "./dist/index.js",
   "scripts": {
