@@ -72,14 +72,14 @@ export default (number, standardDecSep = '.') => {
     }
 
     // check the groupings
-    const [integerPart] = number.split(sep2.sep);
+    const [integerPart] = stripped.split(sep2.sep);
 
     if (!validGrouping(integerPart, sep1.sep)) {
       return Number.NaN;
     }
 
     // ok, we got here! let's handle it
-    return parseFloat(number.split(sep1.sep).join('').replace(sep2.sep, '.')) * (negative ? -1 : 1);
+    return parseFloat(stripped.split(sep1.sep).join('').replace(sep2.sep, '.')) * (negative ? -1 : 1);
   }
 
   // ok, only one separator, which is nice
@@ -88,26 +88,26 @@ export default (number, standardDecSep = '.') => {
   if (sep.cnt > 1) {
     // there's more than one separator, which means it's integer
     // let's check the groupings
-    if (!validGrouping(number, sep.sep)) {
+    if (!validGrouping(stripped, sep.sep)) {
       return Number.NaN;
     }
 
     // it's valid, let's return an integer
-    return parseInt(number.split(sep.sep).join(''), 10) * (negative ? -1 : 1);
+    return parseInt(stripped.split(sep.sep).join(''), 10) * (negative ? -1 : 1);
   }
 
   // just one separator, let's check last group
-  const groups = number.split(sep.sep);
+  const groups = stripped.split(sep.sep);
 
   if (groups[groups.length - 1].length === 3) {
     // ok, we're in ambiguous territory here
 
-    if (sep.sep !== ambiguityDecimal) {
+    if (sep.sep !== standardDecSep) {
       // it's an integer
-      return parseInt(number.split(sep.sep).join(''), 10) * (negative ? -1 : 1);
+      return parseInt(stripped.split(sep.sep).join(''), 10) * (negative ? -1 : 1);
     }
   }
 
   // well, it looks like it's a simple float
-  return parseFloat(number.replace(sep.sep, '.')) * (negative ? -1 : 1);
+  return parseFloat(stripped.replace(sep.sep, '.')) * (negative ? -1 : 1);
 };
