@@ -8,7 +8,16 @@ const validGrouping = (integerPart, sep) => integerPart
     return acc && group.length;
   }, true);
 
-export default (number, ambiguityDecimal = '.') => {
+export default (number, standardDecSep = '.') => {
+  // check validity of parameters
+  if (!number || (typeof number !== 'string')) {
+    throw new TypeError('number must be a string');
+  }
+
+  if ((typeof standardDecSep !== 'string') || (standardDecSep.length !== 1)) {
+    throw new TypeError('standardDecSep must be a single character string');
+  }
+
   // check if negative
   const negative = (number[0] === '-');
 
