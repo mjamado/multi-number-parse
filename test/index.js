@@ -14,6 +14,9 @@ const correctNumbers = [
   { actual: '2,432,123$23', expected: 2432123.23 },
   { actual: '2,45EUR', expected: 2.45 },
   { actual: '4.78€', expected: 4.78 },
+  { actual: '28', expected: 28 },
+  { actual: '-48', expected: -48 },
+  { actual: '39USD', expected: 39 },
   // some negative numbers
   { actual: '-2,543.56', expected: -2543.56 },
   { actual: '-10 654.1234', expected: -10654.1234 },

@@ -29,7 +29,7 @@ export default (number, standardDecSep = '.') => {
     .slice(negative ? 1 : 0);
 
   // analyze separators
-  const separators = stripped.match(/[^\d]/g).reduce((acc, sep, idx) => {
+  const separators = (stripped.match(/[^\d]/g) || []).reduce((acc, sep, idx) => {
     const sepChr = `str_${sep.codePointAt(0)}`;
     const cnt = ((acc[sepChr] || {}).cnt || 0) + 1;
 
@@ -45,6 +45,11 @@ export default (number, standardDecSep = '.') => {
 
   // check correctness of separators
   const sepKeys = Object.keys(separators);
+
+  if (!sepKeys.length) {
+    // no separator, that's easy-peasy
+    return parseInt(stripped, 10) * (negative ? -1 : 1);
+  }
 
   if (sepKeys.length > 2) {
     // there's more than 2 separators, that's wrong
