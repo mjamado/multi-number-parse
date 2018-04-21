@@ -9,6 +9,11 @@ const validGrouping = (integerPart, sep) => integerPart
   }, true);
 
 export default (number, standardDecSep = '.') => {
+  // if it's a number already, this is going to be easy...
+  if (typeof number === 'number') {
+    return number;
+  }
+
   // check validity of parameters
   if (!number || (typeof number !== 'string')) {
     throw new TypeError('number must be a string');
