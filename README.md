@@ -34,6 +34,21 @@ parse('10.4,2'); // returns NaN, malformed digit groups
 parse('1.123.2'); // returns NaN, also malformed digit groups
 ```
 
+### Ambiguity
+
+What happens if a number like `1.234` is passed? What about `1,234`? It's an ambiguous situation,
+because the library can't detect if it's an integer or a float - at least not automatically.
+
+That's why there's a second parameter, in which you can hint at what the standard decimal separator
+should be. By default, that separator is `.` (dot).
+
+```js
+parse('1.234'); // returns 1.234
+parse('1,234'); // returns 1234
+parse('1.234', ','); // returns 1234
+parse('1,234', ','); // returns 1.234
+```
+
 ## Contribute
 
 Found a bug? Feel free to [open an issue](https://github.com/mjamado/multi-number-parse/issues) or

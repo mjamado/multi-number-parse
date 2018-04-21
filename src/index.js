@@ -71,7 +71,7 @@ export default (number, standardDecSep = '.') => {
       [sep1, sep2] = [sep2, sep1];
     }
 
-    // if more than one separator appears more than once, that's wring
+    // if more than one separator appears more than once, that's wrong
     if ((sep1.cnt > 1) && (sep2.cnt > 1)) {
       return Number.NaN;
     }
