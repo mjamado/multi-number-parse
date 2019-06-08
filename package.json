@@ -1,6 +1,6 @@
 {
   "name": "multi-number-parse",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Library for parsing numbers in any valid format.",
   "main": "./dist/index.js",
   "scripts": {
@@ -32,13 +32,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
-    "eslint": "^5.13",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1",
     "eslint-import-resolver-node": "^0.3.2",
-    "eslint-plugin-import": "^2.16",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2",
-    "eslint-plugin-react": "^7.12",
-    "mocha": "^5.2.0",
-    "rimraf": "^2.6"
+    "eslint-plugin-react": "^7.13.0",
+    "mocha": "^6.1.4",
+    "rimraf": "^2.6.3"
   }
 }
