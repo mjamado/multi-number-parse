@@ -1,6 +1,6 @@
 {
   "name": "multi-number-parse",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Library for parsing numbers in any valid format.",
   "main": "./dist/index.js",
   "scripts": {
@@ -26,20 +26,20 @@
   },
   "license": "LGPL-3.0-or-later",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "babel-eslint": "^10.0.2",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
-    "eslint": "^6.0",
-    "eslint-config-airbnb": "^17.1.1",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-node": "^0.3.2",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.2",
-    "mocha": "^6.1.4",
-    "rimraf": "^2.6.3"
+    "eslint-plugin-react": "^7.14.3",
+    "mocha": "^6.2.0",
+    "rimraf": "^3.0.0"
   }
 }
